@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        {% if pages %}
+            <h1>Hub (Community or Professional)</h1>
+        {% endif %}
+    </div>
+    <div>
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                    {% if page_images[page+'_prev'] %}
+                        <a href="/pages/{{ page }}"><img src="{{ page_images[page+'_prev'] }}" width="400" height="300"></a>
+                    {% endif %}
+                    {% for image in page_images[page] %}
+                        <a href="/pages/{{ page }}"><img src="{{ image }}" width="400" height="300"></a>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}

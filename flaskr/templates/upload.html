@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div>
+    <title>Upload</title>
+    <h1> Upload a Post! </h1>
+</div>
+
+<div>
+    <form method=post enctype=multipart/form-data>
+            
+            <div>
+            <h3> Select Post to Upload</h3>
+            <input type='text' name='filename' placeholder= "Post Ttile" required>
+            <input type='file' name='file' accept='.html' required>
+            </div>
+
+            <div>
+            <h3> Select Post Previe Image</h3>
+            <input type='file' name='prev' accept='image/*' required>
+            </div>
+
+            <div type="button">
+            <input type='submit' value='Upload'>
+            </div>
+    </form>
+    <p id=message>{{message}}</p> 
+</div>
+
+{% endblock %}
